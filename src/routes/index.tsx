@@ -129,18 +129,58 @@ function Header() {
 function Hero() {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-background">
-      <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-6 py-16 lg:grid-cols-2 lg:items-center">
-        <div className="animate-fade-up order-2 lg:order-1">
-          <span className="inline-block text-xs uppercase tracking-[0.4em] text-accent mb-6">
-            Botox · Estética facial · Medellín
-          </span>
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-balance">
-            Tratamientos <em className="text-accent not-italic">estéticos profesionales</em> que realzan tu belleza
+      {/* Background image */}
+      <div className="absolute inset-0 -z-10">
+        <img
+          src={heroImg}
+          alt="Sala de procedimientos estéticos en Dainela Cosmetología, Medellín"
+          className="h-full w-full object-cover"
+          width={1920}
+          height={1080}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+      </div>
+
+      <div className="relative mx-auto w-full max-w-7xl px-6 py-16">
+        <div className="max-w-2xl animate-fade-up">
+          {/* Medical credential badge */}
+          <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-background/70 backdrop-blur px-4 py-2 mb-8">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4 text-accent">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span className="text-xs uppercase tracking-[0.3em] text-foreground">
+              Cosmetóloga certificada · Reg. Sanitario
+            </span>
+          </div>
+
+          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.02] text-balance">
+            Medicina <em className="text-accent not-italic">estética facial</em> con resultados clínicamente visibles
           </h1>
-          <p className="mt-6 max-w-lg text-lg text-muted-foreground font-light">
-            Especialista certificada en botox, rejuvenecimiento y cuidado avanzado de la piel.
-            Resultados naturales, atención de lujo accesible.
+
+          <p className="mt-8 max-w-xl text-lg text-muted-foreground font-light leading-relaxed">
+            Toxina botulínica tipo A, mesoterapia facial, peelings químicos
+            controlados y protocolos antiedad personalizados. Procedimientos
+            ambulatorios, bioseguros y respaldados por evidencia científica.
           </p>
+
+          {/* Medical bullets */}
+          <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl text-sm">
+            {[
+              "Insumos de uso médico y trazabilidad",
+              "Protocolos de bioseguridad nivel clínico",
+              "Diagnóstico facial con análisis de piel",
+              "Seguimiento post-procedimiento incluido",
+            ].map((b) => (
+              <li key={b} className="flex items-start gap-2 text-foreground/80">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="mt-0.5 h-4 w-4 shrink-0 text-accent">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <a
               href={whatsappLink}
@@ -148,34 +188,35 @@ function Hero() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground shadow-elegant transition hover:scale-[1.02]"
             >
-              Agenda tu cita por WhatsApp
+              Agenda tu valoración por WhatsApp
             </a>
             <a
               href="#servicios"
-              className="inline-flex items-center justify-center rounded-full border border-border bg-background px-8 py-4 text-sm font-medium transition hover:bg-secondary"
+              className="inline-flex items-center justify-center rounded-full border border-border bg-background/80 backdrop-blur px-8 py-4 text-sm font-medium transition hover:bg-secondary"
             >
-              Ver tratamientos
+              Ver procedimientos
             </a>
           </div>
-          <p className="mt-6 text-xs uppercase tracking-widest text-muted-foreground">
-            ✦ Cupos limitados esta semana
-          </p>
-        </div>
 
-        <div className="relative order-1 lg:order-2 animate-fade-up">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-elegant">
-            <img
-              src={heroImg}
-              alt="Especialista de Dainela Cosmetología en consulta estética"
-              className="h-full w-full object-cover"
-              width={1920}
-              height={1080}
-            />
+          {/* Trust strip */}
+          <div className="mt-12 grid grid-cols-3 gap-6 max-w-lg border-t border-border/60 pt-6">
+            <div>
+              <div className="font-serif text-2xl text-accent">+5</div>
+              <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-1">Años de práctica</div>
+            </div>
+            <div>
+              <div className="font-serif text-2xl text-accent">500+</div>
+              <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-1">Procedimientos</div>
+            </div>
+            <div>
+              <div className="font-serif text-2xl text-accent">100%</div>
+              <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-1">Insumos certificados</div>
+            </div>
           </div>
-          <div className="absolute -bottom-6 -left-6 hidden md:flex flex-col items-center justify-center h-28 w-28 rounded-full bg-gradient-gold text-center text-xs font-serif text-white shadow-gold animate-float">
-            <span className="text-2xl">★</span>
-            <span className="mt-1">Especialista<br/>certificada</span>
-          </div>
+
+          <p className="mt-8 text-xs uppercase tracking-widest text-muted-foreground">
+            ✦ Cupos limitados · Valoración inicial sin costo
+          </p>
         </div>
       </div>
     </section>
