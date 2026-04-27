@@ -128,26 +128,18 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-gradient-soft">
-      <div className="absolute inset-0 -z-0">
-        <img
-          src={heroImg}
-          alt="Tratamiento facial premium en Dainela Cosmetología"
-          className="h-full w-full object-cover opacity-60"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent" />
-      </div>
-
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center">
-        <div className="animate-fade-up">
+    <section id="inicio" className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-background">
+      <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-6 py-16 lg:grid-cols-2 lg:items-center">
+        <div className="animate-fade-up order-2 lg:order-1">
           <span className="inline-block text-xs uppercase tracking-[0.4em] text-accent mb-6">
-            Cosmetología premium · Medellín
+            Botox · Estética facial · Medellín
           </span>
           <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-balance">
-            Realza tu <em className="text-accent not-italic">belleza natural</em> con tratamientos profesionales
+            Tratamientos <em className="text-accent not-italic">estéticos profesionales</em> que realzan tu belleza
           </h1>
           <p className="mt-6 max-w-lg text-lg text-muted-foreground font-light">
-            Cuidado facial personalizado, resultados visibles y una experiencia de lujo accesible diseñada para ti.
+            Especialista certificada en botox, rejuvenecimiento y cuidado avanzado de la piel.
+            Resultados naturales, atención de lujo accesible.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <a
@@ -160,7 +152,7 @@ function Hero() {
             </a>
             <a
               href="#servicios"
-              className="inline-flex items-center justify-center rounded-full border border-border bg-background/60 px-8 py-4 text-sm font-medium backdrop-blur transition hover:bg-secondary"
+              className="inline-flex items-center justify-center rounded-full border border-border bg-background px-8 py-4 text-sm font-medium transition hover:bg-secondary"
             >
               Ver tratamientos
             </a>
@@ -170,7 +162,21 @@ function Hero() {
           </p>
         </div>
 
-        <div className="hidden lg:block" />
+        <div className="relative order-1 lg:order-2 animate-fade-up">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-elegant">
+            <img
+              src={heroImg}
+              alt="Especialista de Dainela Cosmetología en consulta estética"
+              className="h-full w-full object-cover"
+              width={1920}
+              height={1080}
+            />
+          </div>
+          <div className="absolute -bottom-6 -left-6 hidden md:flex flex-col items-center justify-center h-28 w-28 rounded-full bg-gradient-gold text-center text-xs font-serif text-white shadow-gold animate-float">
+            <span className="text-2xl">★</span>
+            <span className="mt-1">Especialista<br/>certificada</span>
+          </div>
+        </div>
       </div>
     </section>
   );
