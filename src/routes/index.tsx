@@ -456,9 +456,10 @@ function Contact() {
           </p>
 
           <ul className="mt-10 space-y-6 text-sm">
-            <ContactItem label="WhatsApp" value="+57 300 000 0000" href={whatsappLink} />
-            <ContactItem label="Instagram" value="@dainela.cosmetologia" href="https://instagram.com" />
-            <ContactItem label="Dirección" value="El Poblado, Medellín, Colombia" />
+            <ContactItem label="WhatsApp" value="+57 313 548 3738" href={whatsappLink} />
+            <ContactItem label="Email" value="daniela@centroestetico.co" href="mailto:daniela@centroestetico.co" />
+            <ContactItem label="Sitio web" value="centroestetico.co" href="https://centroestetico.co" />
+            <ContactItem label="Ubicación" value="Medellín, Colombia" />
             <ContactItem label="Horarios" value="Lun – Sáb · 9:00 a.m. – 7:00 p.m." />
           </ul>
         </div>
