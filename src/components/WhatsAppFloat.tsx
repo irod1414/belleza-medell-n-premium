@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "573000000000";
+const WHATSAPP_NUMBER = "573135483738";
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Hola Daniela 💕, me gustaría agendar una cita para un tratamiento facial."
 );
