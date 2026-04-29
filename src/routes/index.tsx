@@ -8,6 +8,7 @@ import rejuvenationImg from "@/assets/service-rejuvenation.jpg";
 import clinicImg from "@/assets/gallery-clinic.jpg";
 import hydrationImg from "@/assets/gallery-hydration.jpg";
 import productsImg from "@/assets/gallery-products.jpg";
+import logoImg from "@/assets/logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
