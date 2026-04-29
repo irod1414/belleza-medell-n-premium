@@ -507,8 +507,12 @@ function Footer() {
   return (
     <footer className="border-t border-border bg-background py-10">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 text-sm text-muted-foreground md:flex-row">
-        <div className="font-serif text-lg text-foreground">
-          Centro Estético Daniela Ortiz
+        <div className="flex items-center gap-3">
+          <img src={logoImg} alt="Logo Daniela Ortiz · Centro Estético" className="h-14 w-auto object-contain" />
+          <div className="flex flex-col leading-tight">
+            <span className="font-serif text-lg text-foreground">Daniela Ortiz</span>
+            <span className="text-[10px] uppercase tracking-[0.32em] text-muted-foreground">Centro Estético</span>
+          </div>
         </div>
         <div>© {new Date().getFullYear()} · Hecho con amor en Medellín</div>
       </div>
