@@ -504,7 +504,7 @@ function Footer() {
     <footer className="border-t border-border bg-background py-10">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 text-sm text-muted-foreground md:flex-row">
         <div className="font-serif text-lg text-foreground">
-          Dainela <span className="text-accent">·</span> Cosmetología
+          Centro Estético Daniela Ortiz
         </div>
         <div>© {new Date().getFullYear()} · Hecho con amor en Medellín</div>
       </div>
