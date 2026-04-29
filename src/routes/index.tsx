@@ -8,6 +8,8 @@ import rejuvenationImg from "@/assets/service-rejuvenation.jpg";
 import clinicImg from "@/assets/gallery-clinic.jpg";
 import hydrationImg from "@/assets/gallery-hydration.jpg";
 import productsImg from "@/assets/gallery-products.jpg";
+import glp1Hero from "@/assets/glp1-hero.jpg";
+import glp1Pen from "@/assets/glp1-pen.jpg";
 import logoImg from "@/assets/logo.png";
 
 export const Route = createFileRoute("/")({
@@ -88,6 +90,7 @@ function Home() {
         <Hero />
         <About />
         <Services />
+        <GLP1 />
         <Benefits />
         <Testimonials />
         <Gallery />
@@ -114,6 +117,7 @@ function Header() {
         <nav className="hidden md:flex items-center gap-8 text-sm">
           <a href="#nosotros" className="text-muted-foreground hover:text-foreground transition">Nosotros</a>
           <a href="#servicios" className="text-muted-foreground hover:text-foreground transition">Servicios</a>
+          <a href="#glp1" className="text-muted-foreground hover:text-foreground transition">GLP-1</a>
           <a href="#testimonios" className="text-muted-foreground hover:text-foreground transition">Testimonios</a>
           <a href="#contacto" className="text-muted-foreground hover:text-foreground transition">Contacto</a>
         </nav>
