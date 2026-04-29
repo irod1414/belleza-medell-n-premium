@@ -8,6 +8,8 @@ import rejuvenationImg from "@/assets/service-rejuvenation.jpg";
 import clinicImg from "@/assets/gallery-clinic.jpg";
 import hydrationImg from "@/assets/gallery-hydration.jpg";
 import productsImg from "@/assets/gallery-products.jpg";
+import glp1Hero from "@/assets/glp1-hero.jpg";
+import glp1Pen from "@/assets/glp1-pen.jpg";
 import logoImg from "@/assets/logo.png";
 
 export const Route = createFileRoute("/")({
@@ -88,6 +90,7 @@ function Home() {
         <Hero />
         <About />
         <Services />
+        <GLP1 />
         <Benefits />
         <Testimonials />
         <Gallery />
@@ -114,6 +117,7 @@ function Header() {
         <nav className="hidden md:flex items-center gap-8 text-sm">
           <a href="#nosotros" className="text-muted-foreground hover:text-foreground transition">Nosotros</a>
           <a href="#servicios" className="text-muted-foreground hover:text-foreground transition">Servicios</a>
+          <a href="#glp1" className="text-muted-foreground hover:text-foreground transition">GLP-1</a>
           <a href="#testimonios" className="text-muted-foreground hover:text-foreground transition">Testimonios</a>
           <a href="#contacto" className="text-muted-foreground hover:text-foreground transition">Contacto</a>
         </nav>
@@ -330,6 +334,173 @@ function Services() {
           También ofrecemos <strong className="text-foreground">hidratación facial</strong>,{" "}
           <strong className="text-foreground">tratamientos para acné y manchas</strong> y{" "}
           <strong className="text-foreground">cuidado de la piel personalizado</strong>.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+const glp1Benefits = [
+  { icon: "📉", title: "Pérdida de peso sostenida", text: "Estudios clínicos muestran reducción promedio del 15–22% del peso corporal en 72 semanas con tirzepatida." },
+  { icon: "🍽️", title: "Control del apetito", text: "Reduce el hambre y los antojos al actuar sobre los receptores GLP-1 y GIP del cerebro." },
+  { icon: "🩸", title: "Mejora metabólica", text: "Optimiza la glucosa en sangre, la sensibilidad a la insulina y los niveles de colesterol." },
+  { icon: "❤️", title: "Salud cardiovascular", text: "Disminuye la presión arterial y reduce el riesgo cardiovascular asociado al sobrepeso." },
+  { icon: "⚡", title: "Más energía y enfoque", text: "Al estabilizar la glucosa, mejora la energía constante y la claridad mental durante el día." },
+  { icon: "🛡️", title: "Acompañamiento médico", text: "Protocolo personalizado, dosis progresiva y seguimiento mensual con tu especialista." },
+];
+
+const glp1Stats = [
+  { value: "−22%", label: "Peso corporal promedio*" },
+  { value: "−2.4", label: "HbA1c reducción" },
+  { value: "1×", label: "Aplicación semanal" },
+  { value: "72", label: "Semanas de estudio" },
+];
+
+const glp1Progress = [
+  { week: "Semana 4", loss: 18, kg: "−2 kg" },
+  { week: "Semana 12", loss: 38, kg: "−6 kg" },
+  { week: "Semana 24", loss: 62, kg: "−11 kg" },
+  { week: "Semana 48", loss: 85, kg: "−17 kg" },
+  { week: "Semana 72", loss: 100, kg: "−22 kg" },
+];
+
+function GLP1() {
+  return (
+    <section id="glp1" className="py-28 bg-background">
+      <div className="mx-auto max-w-7xl px-6">
+        {/* Intro */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="relative order-2 lg:order-1">
+            <div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-elegant">
+              <img
+                src={glp1Hero}
+                alt="Tratamiento GLP-1 con tirzepatida en Centro Estético Daniela Ortiz, Medellín"
+                className="h-full w-full object-cover"
+                loading="lazy"
+                width={1280}
+                height={960}
+              />
+            </div>
+            <div className="absolute -bottom-6 -left-6 hidden md:block bg-card border border-border rounded-2xl p-5 shadow-elegant max-w-[220px]">
+              <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Aplicación</div>
+              <div className="mt-1 font-serif text-xl">1 vez por semana</div>
+              <div className="mt-2 text-xs text-muted-foreground">Pluma subcutánea de uso ambulatorio</div>
+            </div>
+          </div>
+
+          <div className="order-1 lg:order-2">
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-secondary/40 px-4 py-2">
+              <span className="h-2 w-2 rounded-full bg-accent" />
+              <span className="text-xs uppercase tracking-[0.3em] text-foreground">Nuevo · Programa GLP-1</span>
+            </div>
+            <h2 className="mt-6 font-serif text-4xl md:text-5xl text-balance leading-tight">
+              Pierde peso de forma <em className="text-accent not-italic">médica, segura y sostenida</em> con Tirzepatida
+            </h2>
+            <p className="mt-6 text-muted-foreground leading-relaxed">
+              Los análogos de GLP-1 como la <strong className="text-foreground">tirzepatida</strong> son
+              tratamientos médicos de última generación que actúan sobre los receptores
+              hormonales que regulan el apetito y el metabolismo. En Centro Estético
+              Daniela Ortiz diseñamos un protocolo personalizado, con valoración médica,
+              dosis escalonada y acompañamiento mensual.
+            </p>
+
+            <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {glp1Stats.map((s) => (
+                <div key={s.label} className="rounded-xl border border-border bg-card p-4">
+                  <div className="font-serif text-2xl text-accent">{s.value}</div>
+                  <div className="mt-1 text-[10px] uppercase tracking-widest text-muted-foreground">{s.label}</div>
+                </div>
+              ))}
+            </div>
+            <p className="mt-3 text-[10px] text-muted-foreground">*Resultados promedio del estudio SURMOUNT-1 con tirzepatida 15 mg.</p>
+
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground shadow-elegant transition hover:scale-[1.02]"
+            >
+              Agenda tu valoración GLP-1
+            </a>
+          </div>
+        </div>
+
+        {/* Benefits grid */}
+        <div className="mt-24">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="text-xs uppercase tracking-[0.4em] text-accent">Beneficios clínicos</span>
+            <h3 className="mt-4 font-serif text-3xl md:text-4xl text-balance">
+              Por qué la tirzepatida está revolucionando el manejo del peso
+            </h3>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {glp1Benefits.map((b) => (
+              <div key={b.title} className="rounded-2xl border border-border bg-card p-7 shadow-soft transition hover:shadow-elegant hover:-translate-y-1">
+                <div className="text-3xl">{b.icon}</div>
+                <h4 className="mt-4 font-serif text-xl">{b.title}</h4>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{b.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Progress chart + image */}
+        <div className="mt-24 grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
+          <div className="lg:col-span-2 aspect-square overflow-hidden rounded-2xl shadow-elegant">
+            <img
+              src={glp1Pen}
+              alt="Pluma de aplicación subcutánea de tirzepatida"
+              className="h-full w-full object-cover"
+              loading="lazy"
+              width={1024}
+              height={1024}
+            />
+          </div>
+
+          <div className="lg:col-span-3 rounded-2xl border border-border bg-card p-8 md:p-10 shadow-soft">
+            <span className="text-xs uppercase tracking-[0.4em] text-accent">Progreso esperado</span>
+            <h3 className="mt-3 font-serif text-2xl md:text-3xl">Pérdida de peso promedio en el tiempo</h3>
+            <p className="mt-2 text-sm text-muted-foreground">Resultados de referencia para una paciente de 80 kg con dosis máxima tolerada.</p>
+
+            <div className="mt-8 space-y-5">
+              {glp1Progress.map((p) => (
+                <div key={p.week}>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-muted-foreground">{p.week}</span>
+                    <span className="font-serif text-accent">{p.kg}</span>
+                  </div>
+                  <div className="mt-2 h-2 w-full rounded-full bg-secondary overflow-hidden">
+                    <div
+                      className="h-full rounded-full bg-gradient-gold transition-all duration-700"
+                      style={{ width: `${p.loss}%` }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 grid grid-cols-3 gap-4 border-t border-border pt-6 text-center">
+              <div>
+                <div className="font-serif text-xl text-accent">Mes 1</div>
+                <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-1">Adaptación</div>
+              </div>
+              <div>
+                <div className="font-serif text-xl text-accent">Mes 3</div>
+                <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-1">Resultados visibles</div>
+              </div>
+              <div>
+                <div className="font-serif text-xl text-accent">Mes 6+</div>
+                <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-1">Mantenimiento</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Disclaimer */}
+        <p className="mt-10 text-center text-xs text-muted-foreground max-w-3xl mx-auto">
+          La tirzepatida es un medicamento de prescripción médica. Los resultados varían según cada paciente.
+          Toda aplicación se realiza previa valoración médica y bajo estricto seguimiento profesional.
         </p>
       </div>
     </section>
