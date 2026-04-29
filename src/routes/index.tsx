@@ -12,13 +12,13 @@ import productsImg from "@/assets/gallery-products.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Dainela Cosmetología — Tratamientos faciales premium en Medellín" },
+      { title: "Centro Estético Daniela Ortiz — Tratamientos faciales premium en Medellín" },
       {
         name: "description",
         content:
           "Realza tu belleza natural con limpiezas faciales profundas, botox, rejuvenecimiento e hidratación facial. Atención personalizada en Medellín. Agenda tu cita por WhatsApp.",
       },
-      { property: "og:title", content: "Dainela Cosmetología — Belleza natural en Medellín" },
+      { property: "og:title", content: "Centro Estético Daniela Ortiz — Belleza natural en Medellín" },
       {
         property: "og:description",
         content: "Tratamientos faciales profesionales con resultados visibles. Cupos limitados.",
@@ -63,7 +63,7 @@ const benefits = [
 const testimonials = [
   {
     name: "Valentina M.",
-    text: "Llevo 3 meses con Dainela y mi piel cambió por completo. Se nota el amor y profesionalismo en cada cita.",
+    text: "Llevo 3 meses con Daniela y mi piel cambió por completo. Se nota el amor y profesionalismo en cada cita.",
   },
   {
     name: "Carolina R.",
@@ -103,9 +103,9 @@ function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-background/70 border-b border-border/40">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#inicio" className="font-serif text-2xl tracking-wide">
-          Dainela <span className="text-accent">·</span>{" "}
-          <span className="text-sm font-sans uppercase tracking-[0.3em] text-muted-foreground">Cosmetología</span>
+        <a href="#inicio" className="font-serif text-2xl tracking-wide leading-tight">
+          Daniela Ortiz <span className="text-accent">·</span>{" "}
+          <span className="text-sm font-sans uppercase tracking-[0.3em] text-muted-foreground">Centro Estético</span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm">
           <a href="#nosotros" className="text-muted-foreground hover:text-foreground transition">Nosotros</a>
@@ -133,7 +133,7 @@ function Hero() {
       <div className="absolute inset-0 -z-10">
         <img
           src={heroImg}
-          alt="Sala de procedimientos estéticos en Dainela Cosmetología, Medellín"
+          alt="Sala de procedimientos estéticos en Centro Estético Daniela Ortiz, Medellín"
           className="h-full w-full object-cover"
           width={1920}
           height={1080}
@@ -229,7 +229,7 @@ function About() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 lg:grid-cols-2 lg:items-center">
         <div className="relative">
           <div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-elegant">
-            <img src={specialistImg} alt="Especialista de Dainela Cosmetología" className="h-full w-full object-cover" loading="lazy" />
+            <img src={specialistImg} alt="Especialista de Centro Estético Daniela Ortiz" className="h-full w-full object-cover" loading="lazy" />
           </div>
           <div className="absolute -bottom-6 -right-6 hidden md:flex h-32 w-32 items-center justify-center rounded-full bg-gradient-gold text-center text-sm font-serif text-white shadow-gold animate-float">
             +5 años<br/>de experiencia
@@ -242,7 +242,7 @@ function About() {
             Una experiencia íntima, profesional y hecha para ti
           </h2>
           <p className="mt-6 text-muted-foreground leading-relaxed">
-            Dainela nace del amor por la piel sana y la belleza auténtica. Cada cita es un espacio
+            Daniela Ortiz nace del amor por la piel sana y la belleza auténtica. Cada cita es un espacio
             dedicado solo a ti: te escuchamos, analizamos tu piel y diseñamos un protocolo único
             que respeta tu esencia y potencia tu mejor versión.
           </p>
@@ -337,7 +337,7 @@ function Benefits() {
     <section className="py-28 bg-background">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs uppercase tracking-[0.4em] text-accent">Por qué Dainela</span>
+          <span className="text-xs uppercase tracking-[0.4em] text-accent">Por qué Daniela Ortiz</span>
           <h2 className="mt-4 font-serif text-4xl md:text-5xl text-balance">
             La diferencia está en los detalles
           </h2>
@@ -389,7 +389,7 @@ function Testimonials() {
 
 function Gallery() {
   const items = [
-    { src: clinicImg, alt: "Espacio Dainela Cosmetología", span: "md:col-span-2 md:row-span-2" },
+    { src: clinicImg, alt: "Espacio Centro Estético Daniela Ortiz", span: "md:col-span-2 md:row-span-2" },
     { src: hydrationImg, alt: "Tratamiento de hidratación facial", span: "" },
     { src: productsImg, alt: "Productos premium de skincare", span: "" },
   ];
@@ -504,7 +504,7 @@ function Footer() {
     <footer className="border-t border-border bg-background py-10">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 text-sm text-muted-foreground md:flex-row">
         <div className="font-serif text-lg text-foreground">
-          Dainela <span className="text-accent">·</span> Cosmetología
+          Centro Estético Daniela Ortiz
         </div>
         <div>© {new Date().getFullYear()} · Hecho con amor en Medellín</div>
       </div>

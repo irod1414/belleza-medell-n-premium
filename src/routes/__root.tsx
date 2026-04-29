@@ -29,10 +29,10 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Dainela Cosmetología — Belleza natural en Medellín" },
+      { title: "Centro Estético Daniela Ortiz — Belleza natural en Medellín" },
       { name: "description", content: "Tratamientos faciales premium, botox y rejuvenecimiento en Medellín. Atención personalizada. Agenda por WhatsApp." },
-      { name: "author", content: "Dainela Cosmetología" },
-      { property: "og:title", content: "Dainela Cosmetología — Belleza natural en Medellín" },
+      { name: "author", content: "Centro Estético Daniela Ortiz" },
+      { property: "og:title", content: "Centro Estético Daniela Ortiz — Belleza natural en Medellín" },
       { property: "og:description", content: "Tratamientos faciales premium con resultados visibles." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
