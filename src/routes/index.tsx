@@ -8,6 +8,7 @@ import rejuvenationImg from "@/assets/service-rejuvenation.jpg";
 import clinicImg from "@/assets/gallery-clinic.jpg";
 import hydrationImg from "@/assets/gallery-hydration.jpg";
 import productsImg from "@/assets/gallery-products.jpg";
+import logoImg from "@/assets/logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -103,9 +104,12 @@ function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-background/70 border-b border-border/40">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#inicio" className="font-serif text-2xl tracking-wide leading-tight">
-          Daniela Ortiz <span className="text-accent">·</span>{" "}
-          <span className="text-sm font-sans uppercase tracking-[0.3em] text-muted-foreground">Centro Estético</span>
+        <a href="#inicio" className="flex items-center gap-3" aria-label="Centro Estético Daniela Ortiz">
+          <img src={logoImg} alt="Logo Daniela Ortiz · Centro Estético" className="h-12 w-auto md:h-14 object-contain" />
+          <span className="hidden sm:flex flex-col leading-tight">
+            <span className="font-serif text-base tracking-wide text-foreground">Daniela Ortiz</span>
+            <span className="text-[10px] font-sans uppercase tracking-[0.32em] text-muted-foreground">Centro Estético</span>
+          </span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm">
           <a href="#nosotros" className="text-muted-foreground hover:text-foreground transition">Nosotros</a>
@@ -503,8 +507,12 @@ function Footer() {
   return (
     <footer className="border-t border-border bg-background py-10">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 text-sm text-muted-foreground md:flex-row">
-        <div className="font-serif text-lg text-foreground">
-          Centro Estético Daniela Ortiz
+        <div className="flex items-center gap-3">
+          <img src={logoImg} alt="Logo Daniela Ortiz · Centro Estético" className="h-14 w-auto object-contain" />
+          <div className="flex flex-col leading-tight">
+            <span className="font-serif text-lg text-foreground">Daniela Ortiz</span>
+            <span className="text-[10px] uppercase tracking-[0.32em] text-muted-foreground">Centro Estético</span>
+          </div>
         </div>
         <div>© {new Date().getFullYear()} · Hecho con amor en Medellín</div>
       </div>
