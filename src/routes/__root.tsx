@@ -33,10 +33,14 @@ export const Route = createRootRoute({
       { name: "description", content: "Tratamientos faciales premium, botox y rejuvenecimiento en Medellín. Atención personalizada. Agenda por WhatsApp." },
       { name: "author", content: "Centro Estético Daniela Ortiz" },
       { property: "og:title", content: "Centro Estético Daniela Ortiz — Belleza natural en Medellín" },
-      { property: "og:description", content: "Tratamientos faciales premium con resultados visibles." },
+      { property: "og:description", content: "Tratamientos faciales premium, botox y rejuvenecimiento en Medellín. Atención personalizada. Agenda por WhatsApp." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Centro Estético Daniela Ortiz — Belleza natural en Medellín" },
+      { name: "twitter:description", content: "Tratamientos faciales premium, botox y rejuvenecimiento en Medellín. Atención personalizada. Agenda por WhatsApp." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5ac4d8e8-c591-4509-a9dd-55724d3164fe/id-preview-53816fb6--accd3c04-2a54-4466-9831-4e634e1d9ed2.lovable.app-1777488511285.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5ac4d8e8-c591-4509-a9dd-55724d3164fe/id-preview-53816fb6--accd3c04-2a54-4466-9831-4e634e1d9ed2.lovable.app-1777488511285.png" },
     ],
     links: [
       {
