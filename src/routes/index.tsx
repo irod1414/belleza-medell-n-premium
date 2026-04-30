@@ -147,7 +147,15 @@ function AnimatedHeading({ lines, baseDelay = 0 }: { lines: { text: string; clas
               <span
                 key={ci}
                 className="animate-letter"
-                style={{ animationDelay: `${delay}s`, whiteSpace: ch === " " ? "pre" : "normal" }}
+                style={{
+                  animationDelay: `${delay}s`,
+                  whiteSpace: ch === " " ? "pre" : "normal",
+                  // inherit gradient text effect from parent (text-gold-shimmer)
+                  color: "inherit",
+                  background: "inherit",
+                  WebkitBackgroundClip: "inherit",
+                  backgroundClip: "inherit",
+                }}
                 aria-hidden="true"
               >
                 {ch}
@@ -162,20 +170,19 @@ function AnimatedHeading({ lines, baseDelay = 0 }: { lines: { text: string; clas
 
 function Hero() {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center pt-24 overflow-hidden">
-      {/* Decorative gradient backdrop */}
-      <div className="absolute inset-0 -z-20 bg-gradient-soft" />
+    <section id="inicio" className="relative min-h-screen flex items-center pt-24 overflow-hidden isolate bg-gradient-soft">
+      {/* Decorative blurred halos */}
       <div
-        className="absolute -z-10 -top-40 -right-40 h-[700px] w-[700px] rounded-full opacity-60 blur-3xl"
+        className="absolute top-[-10rem] right-[-10rem] h-[700px] w-[700px] rounded-full opacity-70 blur-3xl pointer-events-none z-0"
         style={{ background: "radial-gradient(circle, oklch(0.85 0.09 85 / 0.55), transparent 70%)" }}
       />
       <div
-        className="absolute -z-10 top-1/3 -left-40 h-[500px] w-[500px] rounded-full opacity-40 blur-3xl"
-        style={{ background: "radial-gradient(circle, oklch(0.9 0.04 250 / 0.5), transparent 70%)" }}
+        className="absolute top-1/3 left-[-10rem] h-[500px] w-[500px] rounded-full opacity-50 blur-3xl pointer-events-none z-0"
+        style={{ background: "radial-gradient(circle, oklch(0.92 0.03 250 / 0.5), transparent 70%)" }}
       />
 
-      {/* Background image — full visual presence */}
-      <div className="absolute inset-0 -z-10">
+      {/* Background image — full visual presence on the right */}
+      <div className="absolute inset-0 z-[1] pointer-events-none">
         <img
           src={heroImg}
           alt="Mujer con piel radiante tras tratamiento de botox en Centro Estético Daniela Ortiz, Medellín"
@@ -183,17 +190,20 @@ function Hero() {
           width={1920}
           height={1080}
         />
-        {/* Left-to-right fade so text is readable but image stays vivid on the right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
-        {/* Subtle gold sheen overlay */}
+        {/* Fade left side to background so text stays legible; right side stays vivid */}
         <div
-          className="absolute inset-0 mix-blend-overlay opacity-40"
-          style={{ background: "linear-gradient(135deg, transparent 40%, oklch(0.85 0.09 85 / 0.4) 100%)" }}
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(to right, var(--background) 0%, color-mix(in oklab, var(--background) 70%, transparent) 38%, transparent 65%)" }}
+        />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
+        {/* Subtle gold sheen */}
+        <div
+          className="absolute inset-0 mix-blend-soft-light opacity-70"
+          style={{ background: "linear-gradient(135deg, transparent 55%, oklch(0.78 0.12 85 / 0.55) 100%)" }}
         />
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-6 py-16">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-16">
         <div className="max-w-2xl">
           {/* Medical credential badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-card/80 backdrop-blur px-4 py-2 mb-8 shadow-soft animate-fade-up">
