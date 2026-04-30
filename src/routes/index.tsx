@@ -203,7 +203,7 @@ function Hero() {
         />
       </div>
 
-      <div className="relative mx-auto w-full max-w-7xl px-6 py-16">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-16">
         <div className="max-w-2xl">
           {/* Medical credential badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-card/80 backdrop-blur px-4 py-2 mb-8 shadow-soft animate-fade-up">
