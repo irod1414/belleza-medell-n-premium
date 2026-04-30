@@ -147,7 +147,15 @@ function AnimatedHeading({ lines, baseDelay = 0 }: { lines: { text: string; clas
               <span
                 key={ci}
                 className="animate-letter"
-                style={{ animationDelay: `${delay}s`, whiteSpace: ch === " " ? "pre" : "normal" }}
+                style={{
+                  animationDelay: `${delay}s`,
+                  whiteSpace: ch === " " ? "pre" : "normal",
+                  // inherit gradient text effect from parent (text-gold-shimmer)
+                  color: "inherit",
+                  background: "inherit",
+                  WebkitBackgroundClip: "inherit",
+                  backgroundClip: "inherit",
+                }}
                 aria-hidden="true"
               >
                 {ch}
@@ -174,7 +182,7 @@ function Hero() {
         style={{ background: "radial-gradient(circle, oklch(0.9 0.04 250 / 0.5), transparent 70%)" }}
       />
 
-      {/* Background image — full visual presence */}
+      {/* Background image — full visual presence on the right */}
       <div className="absolute inset-0 -z-10">
         <img
           src={heroImg}
@@ -183,13 +191,13 @@ function Hero() {
           width={1920}
           height={1080}
         />
-        {/* Left-to-right fade so text is readable but image stays vivid on the right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+        {/* Strong fade on left for text legibility, image fully visible on the right half */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 from-0% via-40% to-transparent to-65%" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
         {/* Subtle gold sheen overlay */}
         <div
-          className="absolute inset-0 mix-blend-overlay opacity-40"
-          style={{ background: "linear-gradient(135deg, transparent 40%, oklch(0.85 0.09 85 / 0.4) 100%)" }}
+          className="absolute inset-0 mix-blend-soft-light opacity-60 pointer-events-none"
+          style={{ background: "linear-gradient(135deg, transparent 50%, oklch(0.82 0.1 85 / 0.6) 100%)" }}
         />
       </div>
 
