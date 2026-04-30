@@ -749,7 +749,7 @@ function Footer() {
             <span className="text-[10px] uppercase tracking-[0.32em] text-muted-foreground">Centro Estético</span>
           </div>
         </div>
-        <div>© {new Date().getFullYear()} · Hecho con amor en Medellín</div>
+        <div>© 2026 Daniela Ortiz. Todos los derechos reservados.</div>
       </div>
     </footer>
   );
