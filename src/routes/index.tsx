@@ -170,20 +170,19 @@ function AnimatedHeading({ lines, baseDelay = 0 }: { lines: { text: string; clas
 
 function Hero() {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center pt-24 overflow-hidden">
-      {/* Decorative gradient backdrop */}
-      <div className="absolute inset-0 -z-20 bg-gradient-soft" />
+    <section id="inicio" className="relative min-h-screen flex items-center pt-24 overflow-hidden isolate bg-gradient-soft">
+      {/* Decorative blurred halos */}
       <div
-        className="absolute -z-10 -top-40 -right-40 h-[700px] w-[700px] rounded-full opacity-60 blur-3xl"
+        className="absolute top-[-10rem] right-[-10rem] h-[700px] w-[700px] rounded-full opacity-70 blur-3xl pointer-events-none z-0"
         style={{ background: "radial-gradient(circle, oklch(0.85 0.09 85 / 0.55), transparent 70%)" }}
       />
       <div
-        className="absolute -z-10 top-1/3 -left-40 h-[500px] w-[500px] rounded-full opacity-40 blur-3xl"
-        style={{ background: "radial-gradient(circle, oklch(0.9 0.04 250 / 0.5), transparent 70%)" }}
+        className="absolute top-1/3 left-[-10rem] h-[500px] w-[500px] rounded-full opacity-50 blur-3xl pointer-events-none z-0"
+        style={{ background: "radial-gradient(circle, oklch(0.92 0.03 250 / 0.5), transparent 70%)" }}
       />
 
       {/* Background image — full visual presence on the right */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 z-[1] pointer-events-none">
         <img
           src={heroImg}
           alt="Mujer con piel radiante tras tratamiento de botox en Centro Estético Daniela Ortiz, Medellín"
@@ -191,13 +190,16 @@ function Hero() {
           width={1920}
           height={1080}
         />
-        {/* Strong fade on left for text legibility, image fully visible on the right half */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 from-0% via-40% to-transparent to-65%" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
-        {/* Subtle gold sheen overlay */}
+        {/* Fade left side to background so text stays legible; right side stays vivid */}
         <div
-          className="absolute inset-0 mix-blend-soft-light opacity-60 pointer-events-none"
-          style={{ background: "linear-gradient(135deg, transparent 50%, oklch(0.82 0.1 85 / 0.6) 100%)" }}
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(to right, var(--background) 0%, color-mix(in oklab, var(--background) 70%, transparent) 38%, transparent 65%)" }}
+        />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
+        {/* Subtle gold sheen */}
+        <div
+          className="absolute inset-0 mix-blend-soft-light opacity-70"
+          style={{ background: "linear-gradient(135deg, transparent 55%, oklch(0.78 0.12 85 / 0.55) 100%)" }}
         />
       </div>
 
