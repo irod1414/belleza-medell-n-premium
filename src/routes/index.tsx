@@ -134,6 +134,32 @@ function Header() {
   );
 }
 
+function AnimatedHeading({ lines, baseDelay = 0 }: { lines: { text: string; className?: string }[]; baseDelay?: number }) {
+  let counter = 0;
+  return (
+    <>
+      {lines.map((line, li) => (
+        <span key={li} className={`block ${line.className ?? ""}`}>
+          {Array.from(line.text).map((ch, ci) => {
+            const delay = baseDelay + counter * 0.035;
+            counter++;
+            return (
+              <span
+                key={ci}
+                className="animate-letter"
+                style={{ animationDelay: `${delay}s`, whiteSpace: ch === " " ? "pre" : "normal" }}
+                aria-hidden="true"
+              >
+                {ch}
+              </span>
+            );
+          })}
+        </span>
+      ))}
+    </>
+  );
+}
+
 function Hero() {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-background">
@@ -141,46 +167,56 @@ function Hero() {
       <div className="absolute inset-0 -z-10">
         <img
           src={heroImg}
-          alt="Sala de procedimientos estéticos en Centro Estético Daniela Ortiz, Medellín"
+          alt="Mujer con piel radiante tras tratamiento de botox en Centro Estético Daniela Ortiz, Medellín"
           className="h-full w-full object-cover"
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
       </div>
 
       <div className="relative mx-auto w-full max-w-7xl px-6 py-16">
-        <div className="max-w-2xl animate-fade-up">
+        <div className="max-w-2xl">
           {/* Medical credential badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-background/70 backdrop-blur px-4 py-2 mb-8">
+          <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-card/80 backdrop-blur px-4 py-2 mb-8 shadow-soft animate-fade-up">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4 text-accent">
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span className="text-xs uppercase tracking-[0.3em] text-foreground">
-              Cosmetóloga certificada · Reg. Sanitario
+              Especialista en Botox · Medellín
             </span>
           </div>
 
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.02] text-balance">
-            Medicina <em className="text-accent not-italic">estética facial</em> con resultados clínicamente visibles
+          <h1
+            className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.02] text-balance text-foreground"
+            aria-label="Botox de autor. Naturalidad clínica."
+            style={{ perspective: "800px" }}
+          >
+            <AnimatedHeading
+              lines={[
+                { text: "Botox de autor." },
+                { text: "Naturalidad", className: "" },
+                { text: "clínica.", className: "text-gold-shimmer italic" },
+              ]}
+            />
           </h1>
 
-          <p className="mt-8 max-w-xl text-lg text-muted-foreground font-light leading-relaxed">
-            Toxina botulínica tipo A, mesoterapia facial, peelings químicos
-            controlados y protocolos antiedad personalizados. Procedimientos
-            ambulatorios, bioseguros y respaldados por evidencia científica.
+          <p className="mt-8 max-w-xl text-lg text-muted-foreground font-light leading-relaxed animate-fade-up" style={{ animationDelay: "1.2s" }}>
+            Toxina botulínica tipo A aplicada con precisión milimétrica para
+            suavizar líneas de expresión sin perder tu esencia. Resultados
+            elegantes, frescos y absolutamente naturales.
           </p>
 
-          {/* Medical bullets */}
-          <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl text-sm">
+          {/* Botox-focused bullets */}
+          <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl text-sm animate-fade-up" style={{ animationDelay: "1.4s" }}>
             {[
-              "Insumos de uso médico y trazabilidad",
-              "Protocolos de bioseguridad nivel clínico",
-              "Diagnóstico facial con análisis de piel",
-              "Seguimiento post-procedimiento incluido",
+              "Toxina botulínica certificada",
+              "Aplicación indolora con técnica suave",
+              "Resultados visibles en 5–7 días",
+              "Look natural, sin rostro congelado",
             ].map((b) => (
-              <li key={b} className="flex items-start gap-2 text-foreground/80">
+              <li key={b} className="flex items-start gap-2 text-foreground/85">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="mt-0.5 h-4 w-4 shrink-0 text-accent">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
@@ -189,18 +225,18 @@ function Hero() {
             ))}
           </ul>
 
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
+          <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "1.6s" }}>
             <a
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground shadow-elegant transition hover:scale-[1.02]"
+              className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground shadow-elegant transition hover:scale-[1.02] hover:shadow-gold"
             >
-              Agenda tu valoración por WhatsApp
+              Agenda tu valoración de Botox
             </a>
             <a
               href="#servicios"
-              className="inline-flex items-center justify-center rounded-full border border-border bg-background/80 backdrop-blur px-8 py-4 text-sm font-medium transition hover:bg-secondary"
+              className="inline-flex items-center justify-center rounded-full border border-border bg-card/80 backdrop-blur px-8 py-4 text-sm font-medium transition hover:bg-secondary"
             >
               Ver procedimientos
             </a>
