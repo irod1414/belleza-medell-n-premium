@@ -162,18 +162,35 @@ function AnimatedHeading({ lines, baseDelay = 0 }: { lines: { text: string; clas
 
 function Hero() {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-background">
-      {/* Background image */}
+    <section id="inicio" className="relative min-h-screen flex items-center pt-24 overflow-hidden">
+      {/* Decorative gradient backdrop */}
+      <div className="absolute inset-0 -z-20 bg-gradient-soft" />
+      <div
+        className="absolute -z-10 -top-40 -right-40 h-[700px] w-[700px] rounded-full opacity-60 blur-3xl"
+        style={{ background: "radial-gradient(circle, oklch(0.85 0.09 85 / 0.55), transparent 70%)" }}
+      />
+      <div
+        className="absolute -z-10 top-1/3 -left-40 h-[500px] w-[500px] rounded-full opacity-40 blur-3xl"
+        style={{ background: "radial-gradient(circle, oklch(0.9 0.04 250 / 0.5), transparent 70%)" }}
+      />
+
+      {/* Background image — full visual presence */}
       <div className="absolute inset-0 -z-10">
         <img
           src={heroImg}
           alt="Mujer con piel radiante tras tratamiento de botox en Centro Estético Daniela Ortiz, Medellín"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-right"
           width={1920}
           height={1080}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+        {/* Left-to-right fade so text is readable but image stays vivid on the right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+        {/* Subtle gold sheen overlay */}
+        <div
+          className="absolute inset-0 mix-blend-overlay opacity-40"
+          style={{ background: "linear-gradient(135deg, transparent 40%, oklch(0.85 0.09 85 / 0.4) 100%)" }}
+        />
       </div>
 
       <div className="relative mx-auto w-full max-w-7xl px-6 py-16">
