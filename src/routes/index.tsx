@@ -208,15 +208,15 @@ function Hero() {
             elegantes, frescos y absolutamente naturales.
           </p>
 
-          {/* Medical bullets */}
-          <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl text-sm">
+          {/* Botox-focused bullets */}
+          <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl text-sm animate-fade-up" style={{ animationDelay: "1.4s" }}>
             {[
-              "Insumos de uso médico y trazabilidad",
-              "Protocolos de bioseguridad nivel clínico",
-              "Diagnóstico facial con análisis de piel",
-              "Seguimiento post-procedimiento incluido",
+              "Toxina botulínica certificada",
+              "Aplicación indolora con técnica suave",
+              "Resultados visibles en 5–7 días",
+              "Look natural, sin rostro congelado",
             ].map((b) => (
-              <li key={b} className="flex items-start gap-2 text-foreground/80">
+              <li key={b} className="flex items-start gap-2 text-foreground/85">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="mt-0.5 h-4 w-4 shrink-0 text-accent">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
@@ -225,18 +225,18 @@ function Hero() {
             ))}
           </ul>
 
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
+          <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "1.6s" }}>
             <a
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground shadow-elegant transition hover:scale-[1.02]"
+              className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground shadow-elegant transition hover:scale-[1.02] hover:shadow-gold"
             >
-              Agenda tu valoración por WhatsApp
+              Agenda tu valoración de Botox
             </a>
             <a
               href="#servicios"
-              className="inline-flex items-center justify-center rounded-full border border-border bg-background/80 backdrop-blur px-8 py-4 text-sm font-medium transition hover:bg-secondary"
+              className="inline-flex items-center justify-center rounded-full border border-border bg-card/80 backdrop-blur px-8 py-4 text-sm font-medium transition hover:bg-secondary"
             >
               Ver procedimientos
             </a>
