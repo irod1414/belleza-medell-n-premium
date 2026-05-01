@@ -4,7 +4,14 @@ import heroImg from "@/assets/hero-skin.jpg";
 import specialistImg from "@/assets/specialist.jpg";
 import cleansingImg from "@/assets/service-cleansing.jpg";
 import botoxImg from "@/assets/service-botox.jpg";
-import rejuvenationImg from "@/assets/service-rejuvenation.jpg";
+import prpImg from "@/assets/service-prp.jpg";
+import hyaluronicImg from "@/assets/service-hyaluronic.jpg";
+import jawlineImg from "@/assets/service-jawline.jpg";
+import tirzepatideImg from "@/assets/service-tirzepatide.jpg";
+import facialImg from "@/assets/service-facial.jpg";
+import ivImg from "@/assets/service-iv.jpg";
+import peptonesImg from "@/assets/service-peptones.jpg";
+import vitcImg from "@/assets/service-vitc.jpg";
 import clinicImg from "@/assets/gallery-clinic.jpg";
 import hydrationImg from "@/assets/gallery-hydration.jpg";
 import productsImg from "@/assets/gallery-products.jpg";
@@ -34,25 +41,54 @@ export const Route = createFileRoute("/")({
 
 const services = [
   {
-    title: "Limpieza Facial Profunda",
-    img: cleansingImg,
-    description:
-      "Una experiencia que purifica tu piel desde adentro. Eliminamos impurezas, puntos negros y células muertas con técnicas suaves y productos de alta calidad.",
-    benefits: ["Piel renovada y luminosa", "Poros visiblemente reducidos", "Sensación de frescura inmediata"],
-  },
-  {
-    title: "Aplicación de Botox",
+    title: "Toxina Botulínica",
     img: botoxImg,
-    description:
-      "Tratamiento profesional para suavizar líneas de expresión y devolverle a tu rostro una apariencia descansada, sin perder naturalidad.",
-    benefits: ["Resultados sutiles y elegantes", "Procedimiento seguro y certificado", "Efecto visible desde la primera semana"],
+    description: "Reduce líneas de expresión con resultados naturales y precisos.",
   },
   {
-    title: "Rejuvenecimiento Facial",
-    img: rejuvenationImg,
-    description:
-      "Un protocolo avanzado que combina hidratación profunda, estímulo de colágeno y técnicas anti-edad para revelar una piel firme y radiante.",
-    benefits: ["Firmeza y elasticidad", "Tono uniforme", "Brillo natural duradero"],
+    title: "Plasma Rico en Plaquetas",
+    img: prpImg,
+    description: "Regeneración celular utilizando componentes de tu propia sangre.",
+  },
+  {
+    title: "Ácido Hialurónico",
+    img: hyaluronicImg,
+    description: "Hidratación profunda y relleno facial para mejorar volumen y contorno.",
+  },
+  {
+    title: "Perfilamiento Mandibular",
+    img: jawlineImg,
+    description: "Definición de la mandíbula para un rostro más estructurado y armónico.",
+  },
+  {
+    title: "Aplicación de Tirzepatide",
+    img: tirzepatideImg,
+    description: "Tratamiento avanzado para control de peso y mejora metabólica.",
+  },
+  {
+    title: "Limpiezas Faciales",
+    img: cleansingImg,
+    description: "Eliminación de impurezas para una piel limpia y saludable.",
+  },
+  {
+    title: "Faciales",
+    img: facialImg,
+    description: "Tratamientos personalizados para mejorar la calidad de la piel.",
+  },
+  {
+    title: "Sueroterapia",
+    img: ivImg,
+    description: "Vitaminas intravenosas para energía, salud y bienestar.",
+  },
+  {
+    title: "Peptonas",
+    img: peptonesImg,
+    description: "Bioestimulación para rejuvenecimiento y reparación celular.",
+  },
+  {
+    title: "Vitamina C",
+    img: vitcImg,
+    description: "Iluminación y antioxidantes para una piel radiante.",
   },
 ];
 
