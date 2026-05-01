@@ -241,67 +241,49 @@ function Hero() {
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-16">
         <div className="max-w-2xl">
-          {/* Medical credential badge */}
+          {/* Brand badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-card/80 backdrop-blur px-4 py-2 mb-8 shadow-soft animate-fade-up">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4 text-accent">
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span className="text-xs uppercase tracking-[0.3em] text-foreground">
-              Especialista en Botox · Medellín
+              Medicina estética · Medellín
             </span>
           </div>
 
           <h1
             className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.02] text-balance text-foreground"
-            aria-label="Botox de autor. Naturalidad clínica."
+            aria-label="Centro Estético Daniela Ortiz"
             style={{ perspective: "800px" }}
           >
             <AnimatedHeading
               lines={[
-                { text: "Botox de autor." },
-                { text: "Naturalidad", className: "" },
-                { text: "clínica.", className: "text-gold-shimmer italic" },
+                { text: "Centro Estético" },
+                { text: "Daniela Ortiz", className: "text-gold-shimmer italic" },
               ]}
             />
           </h1>
 
-          <p className="mt-8 max-w-xl text-lg text-muted-foreground font-light leading-relaxed animate-fade-up" style={{ animationDelay: "1.2s" }}>
-            Toxina botulínica tipo A aplicada con precisión milimétrica para
-            suavizar líneas de expresión sin perder tu esencia. Resultados
-            elegantes, frescos y absolutamente naturales.
+          <p className="mt-8 max-w-xl text-lg md:text-xl text-muted-foreground font-light leading-relaxed animate-fade-up" style={{ animationDelay: "1.0s" }}>
+            Medicina estética avanzada en Medellín. Tratamientos faciales y
+            corporales diseñados para realzar tu belleza con resultados naturales,
+            elegantes y seguros.
           </p>
 
-          {/* Botox-focused bullets */}
-          <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl text-sm animate-fade-up" style={{ animationDelay: "1.4s" }}>
-            {[
-              "Toxina botulínica certificada",
-              "Aplicación indolora con técnica suave",
-              "Resultados visibles en 5–7 días",
-              "Look natural, sin rostro congelado",
-            ].map((b) => (
-              <li key={b} className="flex items-start gap-2 text-foreground/85">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="mt-0.5 h-4 w-4 shrink-0 text-accent">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                <span>{b}</span>
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "1.6s" }}>
+          <div className="mt-10 flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "1.3s" }}>
             <a
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground shadow-elegant transition hover:scale-[1.02] hover:shadow-gold"
             >
-              Agenda tu valoración de Botox
+              Agendar cita
             </a>
             <a
               href="#servicios"
               className="inline-flex items-center justify-center rounded-full border border-border bg-card/80 backdrop-blur px-8 py-4 text-sm font-medium transition hover:bg-secondary"
             >
-              Ver procedimientos
+              Ver tratamientos
             </a>
           </div>
 
@@ -391,38 +373,33 @@ function Services() {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {services.map((s) => (
             <article
               key={s.title}
-              className="group flex flex-col overflow-hidden rounded-2xl bg-card shadow-soft transition hover:shadow-elegant hover:-translate-y-1"
+              className="group flex flex-col overflow-hidden rounded-2xl bg-card border border-border/60 shadow-soft transition hover:shadow-elegant hover:-translate-y-1"
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={s.img}
                   alt={s.title}
                   loading="lazy"
+                  width={1024}
+                  height={768}
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="flex flex-1 flex-col p-8">
-                <h3 className="font-serif text-2xl">{s.title}</h3>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.description}</p>
-                <ul className="mt-5 space-y-2 text-sm">
-                  {s.benefits.map((b) => (
-                    <li key={b} className="flex items-start gap-2">
-                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-accent" />
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="font-serif text-xl leading-tight">{s.title}</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed flex-1">{s.description}</p>
                 <a
                   href={whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-8 inline-flex items-center justify-center rounded-full border border-primary px-6 py-3 text-sm font-medium text-primary transition hover:bg-primary hover:text-primary-foreground"
+                  className="mt-6 inline-flex items-center gap-1 text-xs uppercase tracking-[0.25em] text-accent transition hover:gap-2"
                 >
-                  Agendar
+                  Agendar cita
+                  <span aria-hidden>→</span>
                 </a>
               </div>
             </article>
