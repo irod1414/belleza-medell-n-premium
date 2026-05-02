@@ -252,7 +252,7 @@ function Hero() {
           </div>
 
           <h1
-            className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.02] text-balance text-foreground"
+            className="font-serif text-[2.25rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-balance text-foreground break-words"
             aria-label="Centro Estético Daniela Ortiz"
             style={{ perspective: "800px" }}
           >
@@ -288,7 +288,7 @@ function Hero() {
           </div>
 
           {/* Trust strip */}
-          <div className="mt-12 grid grid-cols-3 gap-6 max-w-lg border-t border-border/60 pt-6">
+          <div className="mt-12 grid grid-cols-3 gap-3 sm:gap-6 max-w-lg border-t border-border/60 pt-6">
             <div>
               <div className="font-serif text-2xl text-accent">+5</div>
               <div className="text-[10px] uppercase tracking-widest text-muted-foreground mt-1">Años de práctica</div>
