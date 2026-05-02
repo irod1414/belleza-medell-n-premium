@@ -86,9 +86,9 @@ const services = [
     description: "Bioestimulación para rejuvenecimiento y reparación celular.",
   },
   {
-    title: "Vitamina C",
+    title: "Vitamina C Corporal",
     img: vitcImg,
-    description: "Iluminación y antioxidantes para una piel radiante.",
+    description: "Reafirma, tonifica y aumenta el tamaño de los glúteos.",
   },
 ];
 
