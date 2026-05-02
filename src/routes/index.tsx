@@ -252,7 +252,7 @@ function Hero() {
           </div>
 
           <h1
-            className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.02] text-balance text-foreground"
+            className="font-serif text-[2.25rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-balance text-foreground break-words"
             aria-label="Centro Estético Daniela Ortiz"
             style={{ perspective: "800px" }}
           >
